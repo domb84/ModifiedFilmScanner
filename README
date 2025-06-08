@@ -37,6 +37,7 @@ choco install openjdk -y
 - The camera firmware file must be named `FWDV180N.BIN` and placed on the SD card for flashing.
 - The NT96650 firmware starts at hex offset `0x00004000` (matches the runcamhd header).
 - Modifying the bitrate to more than 14800 seems to crash the capture before it starts
+- Flashing the firmware seems to set the language back to Chinese. To set it back. Power the machine on, wait for it to show the frame, press menu once, then press down 6 times, then press OK. That should be the language menu.
 
 ---
 
