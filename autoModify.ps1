@@ -2,12 +2,12 @@
 
 # application paths
 $java = "C:\Program Files\OpenJDK\jdk-22.0.2\bin\java.exe"
-$bfc4ntk = "C:\Users\DominicBird\Mega\ch341\M127 ROM\bfc4ntk.exe"
-$ntkcalc = "C:\Users\DominicBird\Mega\ch341\M127 ROM\ntkcalc.exe"
-$ntkmpe = "C:\Users\DominicBird\Mega\ch341\Tools\NtkMPE.jar"
+$bfc4ntk = ".\Tools\bfc4ntk.exe"
+$ntkcalc = ".\Tools\ntkcalc.exe"
+$ntkmpe = ".\GUITools\NtkMPE.jar"
 
 # source paths
-$source = "C:\Users\DominicBird\Mega\ch341\M127 ROM\verified_dump_2025.6.6.2.bin"
+$source = ".\Source\verified_dump_2025.6.6.2.bin"
 
 # extract filename and path
 $sourceFilename = [io.path]::GetFileNameWithoutExtension($source)
@@ -18,10 +18,11 @@ $suffixOffset = "0x4000"
 $part1Offset = "000ab000"
 
 # temp and output paths
-$extractedFile = "$sourcePath\$sourceFilename.decomp"
-$compressedFile = "$sourcePath\$sourceFilename.compressed"
-$suffixFile = "$sourcePath\$sourceFilename.suffix"
-$outputFile = "$sourcePath\FWDV180N.BIN"
+$tempPath = ".\Temp"
+$extractedFile = Join-Path -Path (Resolve-Path $tempPath).Path -ChildPath "$sourceFilename.decomp"
+$compressedFile = Join-Path -Path (Resolve-Path $tempPath).Path -ChildPath "$sourceFilename.compressed"
+$suffixFile = Join-Path -Path (Resolve-Path $tempPath).Path -ChildPath "$sourceFilename.suffix"
+$outputFile = ".\Output\FWDV180N.BIN"
 
 # Put them in an array
 $paths = @($bfc4ntk, $ntkcalc, $ntkmpe, $source, $java)
@@ -55,7 +56,7 @@ if (-Not (Test-Path $extractedFile)) {
 Write-Host "Open $extractedFile in NtkMPE to modify the bitrate" -ForegroundColor Green
 
 # # open ntkmpe to modify the partition
-Start-Process -FilePath $java -ArgumentList "-jar", $ntkmpe -Wait
+Start-Process -FilePath $java -ArgumentList "-jar", (Resolve-Path $ntkmpe).Path -Wait -NoNewWindow
 
 # wait for it to be modified
 Read-Host "Press Enter after you have modifed the partition $extractedFile"
