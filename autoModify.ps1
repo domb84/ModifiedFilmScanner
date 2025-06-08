@@ -24,7 +24,7 @@ $suffixFile = "$sourcePath\$sourceFilename.suffix"
 $outputFile = "$sourcePath\FWDV180N.BIN"
 
 # Put them in an array
-$paths = @($bfc4ntk, $ntkcalc, $ntkmpe, $source. $java)
+$paths = @($bfc4ntk, $ntkcalc, $ntkmpe, $source, $java)
 
 # Check existence
 foreach ($path in $paths) {
@@ -52,6 +52,8 @@ if (-Not (Test-Path $extractedFile)) {
     exit 1
 }
 
+Write-Host "Open $extractedFile in NtkMPE to modify the bitrate" -ForegroundColor Green
+
 # # open ntkmpe to modify the partition
 Start-Process -FilePath $java -ArgumentList "-jar", $ntkmpe -Wait
 
@@ -70,8 +72,11 @@ if (-Not (Test-Path $compressedFile)) {
     exit 1
 }
 
+# Create the final file
+Copy-Item -Path $compressedFile -Destination $outputFile -Force
+
 # checksum entire file and write to output file
-$arguments = "-cw `"$compressedFile`""
+$arguments = "-cw `"$outputFile`""
 Write-Host "Running: $ntkcalc $arguments"
 Start-Process -NoNewWindow -FilePath $ntkcalc -ArgumentList "$arguments" -Wait
 
@@ -83,5 +88,4 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# Create the final file
-Copy-Item -Path $compressedFile -Destination $outputFile -Force
+Write-Host "Firmware modifed. Copy FWDV180N.BIN to your SDCARD and boot the M127 machine." -ForegroundColor Green
