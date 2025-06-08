@@ -1,6 +1,10 @@
 # ModifiedFilmScanner
 
-## Firmware Dumping Instructions
+A project for extracting and modifying the M127 film scanner device.
+
+---
+
+## 📦 Firmware Dumping Instructions
 
 1. **Install the CH341A Driver**  
    Download and install `CH341PAR.exe`.
@@ -12,29 +16,29 @@
    Choose `MX25L3206E` as the target chip.
 
 4. **Read and Verify ROM**  
-   - Read the ROM and save the dump in a safe location.  
-   - It’s best to capture the ROM twice and perform a verify operation to ensure integrity.
+   - Read the ROM and save the dump in a safe location.
+   - Capture the ROM twice and perform a verify operation to ensure integrity.
 
 ---
 
-## autoModify Script Prerequisites
+## ⚙️ autoModify Script Prerequisites
 
-- Install OpenJDK using Chocolatey:
-  ```
-  choco install openjdk -y
-  ```
+To use the automation scripts, install OpenJDK via Chocolatey:
+
+```powershell
+choco install openjdk -y
+```
 
 ---
 
-## Firmware Notes
+## 📝 Firmware Notes
 
-- Creating a folder named `uengmode` on the SD card will trigger the device to flash with a JPEG and configuration file.
-- The camera firmware file should be named `FWDV180N.BIN` and placed on the SD card for flashing.
+- Create a folder named `uengmode` on the SD card to trigger the device to flash with a JPEG and configuration file.
+- The camera firmware file must be named `FWDV180N.BIN` and placed on the SD card for flashing.
 - The NT96650 firmware starts at hex offset `0x00004000` (matches the runcamhd header).
 
 ---
 
-## Additional Resources
+## 📚 Additional Resources
 
 - See [`autoModify.ps1`](autoModify.ps1) for automating firmware extraction and modification.
-- For detailed firmware info extraction, refer to [`install_novatek_fw_info_windows.txt`](install_novatek_fw_info_windows.txt).

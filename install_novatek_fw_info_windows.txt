@@ -1,3 +1,5 @@
+# Here for reference as it does not work with the M127 firmware, use bfc4ntk instead
+
 # install wsl 2
 wsl --install
 
@@ -10,4 +12,4 @@ wget https://raw.githubusercontent.com/EgorKin/Novatek-FW-info/refs/heads/main/N
 wget https://raw.githubusercontent.com/EgorKin/Novatek-FW-info/refs/heads/main/NTKFWinfo.py
 
 # usage
-python3 NTKKFWinfo.py Mega\ch341\M127 ROM\verified_dump_2025.6.6.2.bin
+python3 NTKKFWinfo.py -i Mega\ch341\M127 ROM\verified_dump_2025.6.6.2.bin
