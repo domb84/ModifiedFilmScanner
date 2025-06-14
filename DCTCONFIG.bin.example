@@ -1,0 +1,100 @@
+# Example1 taken from https://www.rcgroups.com/forums/showpost.php?p=53617089&postcount=3
+
+Date format=[1];set date format,0:YYYY/MM/DD, 1:MM/DD/YYYY, 2:DD/MM/YYYY
+/**Note: "Date time" must be in  the same date format specified otherwise unable to set the date**/
+Date time=[03/21/2025-22:14:02];date time setting,yyyy/mm/dd-hh:mm:ss
+Modify datetime=[0]; Confirm to modify Date time setting,0:no 1:yes
+
+Default Mode=[0];set power-on default mode,0:Video Mode 1,1:Video Mode 2,2:Photo Mode
+
+MOVIE MODE 1
+Movie Size=[0];0:1080p,1:720p,
+Movie Frame Rate=[4];0:30fps,1:60fps,2:25fps,3:50fps,4:100fps
+Movie Sound=[2];set Video sound,0:Mute,1:Low,2:Medium,3:High
+Movie Loop Recording=[0];set loop recording on or off, 0:off, 1:on
+Movie Cycle Time=[4];Video cycle time,0:3 minutes,1:5 minutes,2:10 minutes,3:15 minutes,4:Max
+Movie Timelapse=[0];set time lapse interval,0:off,1:1s,2:5s,3:10s,4:30s,5:1 min,6:5 min,7:10 min,8:30 min,9:60 min
+Movie Time Stamp=[1];set date/time stamp on or off,0:off,1:on
+Movie quality=[32] ;set Video Bitrate from 1Mbps to 32Mbs (Movie quality from low to high;
+0 means default values: 1080P 30fps/720p 60fps AVC 12Mbps, 1080P 30fps/720p 60fps HEVC 8MBps,
+1080P 60fps AVC 20Mbps, 1080P 60fps HEVC 12MBps,1080P 100fps AVC 32Mbps, 1080P 100fps HEVC 24MBps)
+Movie Codec=[1];set codec,0:H264 AVC,1:H265 HEVC 
+Movie file format=[1];set movie file format,0:MOV,1:MP4
+Movie wide dynamic range=[0];set movie wide dynamic range,0:off,1:on
+
+MOVIE MODE 2
+Movie Size=[0];0:1080p,1:720p,
+Movie Frame Rate=[1];0:30fps,1:60fps,2:25fps,3:50fps,4:100fps
+Movie Sound=[2];set Video sound,0:Mute,1:Low,2:Medium,3:High
+Movie Loop Recording=[0];set loop recording on or off, 0:off, 1:on
+Movie Cycle Time=[4];Video cycle time,0:3 minutes,1:5 minutes,2:10 minutes,3:15 minutes,4:Max
+Movie Timelapse=[0];set time lapse interval,0:off,1:1s,2:5s,3:10s,4:30s,5:1 min,6:5 min,7:10 min,8:30 min,9:60 min,
+Movie Time Stamp=[1];set date/time stamp on or off,0:off,1:on
+Movie quality=[32] ;set Video Bitrate from 1Mbps to 32Mbs (Movie quality from low to high;
+0 means default values: 1080P 30fps/720p 60fps AVC 12Mbps, 1080P 30fps/720p 60fps HEVC 8MBps,
+1080P 60fps AVC 20Mbps, 1080P 60fps HEVC 12MBps,1080P 100fps AVC 32Mbps, 1080P 100fps HEVC 24MBps)
+Movie Codec=[1];set codec,0:H264 AVC,1:H265 HEVC 
+Movie file format=[1];set movie file format,0:MOV,1:MP4
+Movie wide dynamic range=[0];set movie wide dynamic range,0:off,1:on
+
+PHOTO MODE
+Photo Mode Capture Size=[0];set photo size,0:1920x1080,1:1280x720
+Photo Time stamp=[1];set date/time stamp on or off,0:off,1:on
+
+SYSTEM SETTINGS
+Image Sensor Rotate=[0];set image sensor Rotate (180 deg.),0:off,1:Rotate 180 deg,2:Horizontal Mirror,3:Vertical Mirror,4:Auto Rotate
+G-sensor Sensitivity=[0];set G-sensor Sensitivity for driving,0:off,1:low,2:middle,3:high
+Power on=[1];set system  power on time,0:delay,1:fast
+Auto Power off=[1];set system auto power off time interval,0:off,1:30 seconds,2:1 minutes,3:2 minutes
+Auto Record with External Power=[0];set connect with power to start video recording automatically,0:off,1:on,
+One Power Button to Auto Record=[0];set press power key to start video recording automatically,0:off,1:on,
+Auto Off with External Power disconnected=[0],0:Immediately,1:delay 10s;2:delay 30s;3:delay 60s;4:record to low battery power off;5:change to motion detect;
+Light Frequency=[1];set light source frequency,0:50 HZ,1:60 HZ
+LED Flicker=[1];set LED flicker when recording,0:off,1:on,
+TV out=[0];set Tv out,0:NTSC,1:PAL,
+TV Display Ratio=[0];set display ratio,0:4*3,1:16*9
+
+Motion Detect=[0];set motion detect,0:off,1:on
+Motion Detect Timeout=[2];set motion detect timeout,0:5s,1:15s,2:30s,3:60s
+Motion Detect Sensitivity=[0];set motion detect Sensitivity,0:high,1:nomal,2:low
+
+Format TF card =[0];0: not format card,1:format card 
+/**Note: Set the value to 1, the camera will format the memory card.**/
+/**Formatting will delete all data,Please backup the data in the TF card!**/
+
+IQ SETTINGS
+Enable Manual AE Lock or AWB Lock = [0]; 0: Not enabled; 1: AE Lock and AWB Lock; 2: AE Lock only; 3: AWB Lock only.
+(Long 3 sec. Mode button press required to turn AEL or AWBL on)
+White Balance=[0];Set White Balance,0:Auto,1:Sunny,2:Cloudy,3:Tungsten,4:Fluorescent,5:Custom WB1,6:Custom WB2,7:Custom WB3
+Sunny(5000-6500K) used for sunny with clear sky(Rgain=360,Ggain=256,Bgain=380);
+Cloudy(9000-10000K) used for shade or heavily overcast sky(Rgain=440,Ggain=256,Bgain=340);
+Tungsten(2500-3500K) used for Tungsten bulb (or called Incandescent light)(Rgain=285,Ggain=256,Bgain=440);
+Fluorescent(4000-5000K) used for fluorescent lamps(Rgain=325,Ggain=256,Bgain=420);
+Customized White Balance 1 Red Gain=[256],Green Gain=[256],Blue Gain=[256];
+Customized White Balance 2 Red Gain=[256],Green Gain=[256],Blue Gain=[256];
+Customized White Balance 3 Red Gain=[256],Green Gain=[256],Blue Gain=[256];
+Set red ,green,blue gain,256 is 1x gain,value from 100 to 999;
+
+Color Effect=[0];Set Color Effect,0:Standard,1:Mono,2:Sepia,3:Cool,4:Cooler,5:Warm,6:Warmer,7:Vivid
+Exposure Value= [16] ;Exposure compensation,values from 0 to 32,In 1 increments,default value is 16,
+AE Metering= [0] ;Set Exposure AE Metering,0:Multi Spots,1:Center,2:Top,3:Bottom,
+Enable Long Exposure(low frame rate) for Low Light= [0] ;0: Not enabled; 1: Enable,
+Contrast= [50]  ;Set Contrast,values from 0 to 100,In 1 increments,default value is 50,
+Saturation= [70]  ;Set Image Saturation,values from 0 to 100,In 1 increments,default value is 50,
+Sharpness= [50]  ;Set Image Sharpness,values from 0 to 100,In 1 increments,default value is 50,
+{software version:SLL01-v0.21}
+
+
+# Example2 https://www.rcgroups.com/forums/showpost.php?p=22979749&postcount=9632
+Capture Size=[0];set photo size,0:1280x960,1: 1280x720,
+Auto Record=[0];set movie auto record,0 : off,1: on,
+Exposure Value=[2];Exposure compensation,0 : -2EV,1:-1EV,2: 0EV,3 : +1EV,4:+2EV
+White Balance=[0];Set White Balance,0 :Auto,1: Daylight,2:Cloudy,3:Tungsten,4:Fluorescent,
+Contrast=[2] ;Set Contrast ,0 :-2,1:-1,2:Normal,3:+1,4:+2,
+Color Effect=[0];Set Color Effect,0 : Standard,1:Mono,2:Sepia,3:Cooler,4:Cool,5:Warm,6:W armer,
+Saturation=[2];Set Image Staturation,0 :-2,1 :-1,2:Normal,3:+1,4:+2,
+Set Time Lapse Shooting[0],0 : off,1:1s,2:2s,3:5s,4:10s,5:30s,6:60s,
+Motion Detect=[0];set motion detect,0: off,1 : on
+{MicroDVR mov 2012/10/09 v0.49}
+{LDMICDVR,v1.1S,01/06/2012}
+	

@@ -34,6 +34,7 @@ choco install openjdk -y
 ## 📝 Firmware Notes
 
 - Create a folder named `uengmode` on the SD card to trigger the device to flash with a JPEG and configuration file.
+- Create a file named `engmode` on the SD card and it will boot straight to the film adjustment. It shows "Film type:8MM" compared to the normal scren.
 - The camera firmware file must be named `FWDV180N.BIN` and placed on the SD card for flashing.
 - The NT96650 firmware starts at hex offset `0x00004000` (matches the runcamhd header).
 - Modifying the bitrate to more than 14800 seems to crash the capture before it starts
