@@ -1,7 +1,0 @@
-Exposure Value=[2];Exposure compensation,0 : -2EV,1:-1EV,2: 0EV,3 : +1EV,4:+2EV
-White Balance=[2];Set White BÿMance,0 :Auto,1: Daylight,2:Cloudy,3:Tungsten,4:Fluorescent,
-Contrast=[2] ;Set Contrast ,0 :-2,1:-1,2:Normal,3:+1,4:+2,
-Color Effect=[1];Set Color Effect,0 : Standard,1:Mono,2:Sepia,3:Cooler,4:Cool,5:Warm,6:W armer,
-Saturation=[2];Set Image Staturation,0 :-2,1 :-1,2:Normal,3:+1,4:+2,
-{MicroDVR mov 2012/10/09 v0.49}
-{LDMICDVR,v1.1S,01/06/2012}
