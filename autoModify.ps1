@@ -19,10 +19,18 @@ $part1Offset = "000ab000"
 
 # temp and output paths
 $tempPath = ".\Temp"
+$outputPath = ".\Output"
+if (-Not (Test-Path $tempPath)) {
+    New-Item -ItemType Directory -Path $tempPath | Out-Null
+}
+if (-Not (Test-Path $outputPath)) {
+    New-Item -ItemType Directory -Path $outputPath | Out-Null
+}
+
 $extractedFile = Join-Path -Path (Resolve-Path $tempPath).Path -ChildPath "$sourceFilename.decomp"
 $compressedFile = Join-Path -Path (Resolve-Path $tempPath).Path -ChildPath "$sourceFilename.compressed"
 $suffixFile = Join-Path -Path (Resolve-Path $tempPath).Path -ChildPath "$sourceFilename.suffix"
-$outputFile = ".\Output\FWDV180N.BIN"
+$outputFile = Join-Path -Path (Resolve-Path $outputPath).Path -ChildPath "FWDV180N.BIN"
 
 # Put them in an array
 $paths = @($bfc4ntk, $ntkcalc, $ntkmpe, $source, $java)
