@@ -41,8 +41,8 @@ choco install openjdk -y
 - Flashing the firmware seems to set the language back to Chinese. To set it back. Power the machine on, wait for it to show the frame, press menu once, then press down 6 times, then press OK. That should be the language menu.
 - You should be able to configure the capture by adding a DCTCONFIG.bin to the SDCARD.
 - You can create a DCTCONFIG.bin file here https://app.runcam.com/tool/setting?configId=86eadd10825c0c103b49b999eaa92f58. 
-- This generates a binary file prefixed and suffixed with Roral008. This is referenced just before DCTCONFIG.bin. For the M127 this seems to be RANEKA001.
-- Replacing Roral008 with RANEKA001 creates a flashable config file which updates the config
+- This generates a binary file prefixed and suffixed with Roral008. This is referenced just before DCTCONFIG.bin. For the M127 this seems to be ANEKA001.
+- Replacing Roral008 with ANEKA001 creates a flashable config file which updates the config
 
 ## RUNCAM HEX VALUES
 
@@ -50,9 +50,10 @@ choco install openjdk -y
 - Exposure is at 0x00000160, can be between 00 and 0C. 00 is +2, 0C -2. # +2. +1.7, +1.3, +1, +0.7, +0.3, 0, -0.3. -0.7, -1, -1.3, -1.7, 2
 - Contrast is at 0x00000164, can be between 00 and 04. 00 is +2, 04 -2. # +2, +1, 0. -1, -2
 - Saturation is at 0x00000168, can be between 00 and 04. 00 is +2, 04 -2. # +2, +1, 0. -1, -2
-- Filter is at 0x0000016C, can be between 00 and 0C. 00 mono, 01 sepia, 02, cooler, 03 is cool, 04 normal, 05 warm, 06 warmer, 07 vivid 
+- Filter is at 0x0000016C, can be between 00 and 0C. 00 mono, 01 sepia, 02, cooler, 03 is cool, 04 normal, 05 warm, 06 warmer, 07 vivid
 - White Balance is at 0x00000170, can be between 00 and 05, 00 auto, 01 sunny, 02 cloudy, 03 tungsten, 04 flourescent1, 05 flourescent1
 
+I inadvertently dumped the following file when playing with various configuration files. This would appear to have dumped the possible values and supported parameters. I've not yet recreated this.
 
 ## CA_DUMP.RAW ##
 Exposure Value=[2];Exposure compensation,0 : -2EV,1:-1EV,2: 0EV,3 : +1EV,4:+2EV

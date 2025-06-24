@@ -61,7 +61,7 @@ if (-Not (Test-Path $extractedFile)) {
     exit 1
 }
 
-Write-Host "Open $extractedFile in NtkMPE to modify the bitrate" -ForegroundColor Green
+Write-Host "Open $extractedFile in NtkMPE to modify the bitrate. DO NOT SET IT ABOVE 14800 (30Mbit)." -ForegroundColor Green
 
 # # open ntkmpe to modify the partition
 Start-Process -FilePath $java -ArgumentList "-jar", (Resolve-Path $ntkmpe).Path -Wait -NoNewWindow
