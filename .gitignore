@@ -1,3 +1,4 @@
 Temp/*
 Output/*
 # Ignore all files in the Temp and Output directories
+GUITools/confJNov.properties
